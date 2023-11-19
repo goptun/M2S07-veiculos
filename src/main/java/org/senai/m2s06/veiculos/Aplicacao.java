@@ -1,7 +1,9 @@
 package org.senai.m2s06.veiculos;
 
+import org.senai.m2s06.veiculos.model.Multa;
 import org.senai.m2s06.veiculos.model.Veiculo;
 import org.senai.m2s06.veiculos.model.enums.TipoVeiculo;
+import org.senai.m2s06.veiculos.repository.MultaRepository;
 import org.senai.m2s06.veiculos.repository.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,10 +14,20 @@ public class Aplicacao {
     @Autowired
     private VeiculoRepository veiculoRepo;
 
+    @Autowired
+    private MultaRepository multaRepo;
+
     public void executar() {
-        Veiculo veiculo1 = new Veiculo("AAA-1111", TipoVeiculo.AUTOMOVEL, "GT-R",2015 , "vermelho");
-        Veiculo veiculo2 = new Veiculo("BBB-2222", TipoVeiculo.ONIBUS, "Marcopolo", 1998, "branco");
+        Veiculo veiculo1 = new Veiculo("ABC-1234", TipoVeiculo.AUTOMOVEL, "Bat-Movel", 2022, "preto");
+        Veiculo veiculo2 = new Veiculo("BCA-4321", TipoVeiculo.ONIBUS, "Enterprise", 1960, "prata");
         veiculoRepo.save(veiculo1);
         veiculoRepo.save(veiculo2);
+
+        Multa multa1 = new Multa("Farol apagado", "Gothan City", 250F, veiculo1);
+        Multa multa2 = new Multa("Insulfilm", "Gothan City", 100F, veiculo1);
+        Multa multa3 = new Multa("Excesso velocidade", "Hiper-espaço", 400F, veiculo2);
+        multaRepo.save(multa1);
+        multaRepo.save(multa2);
+        multaRepo.save(multa3);
     }
 }

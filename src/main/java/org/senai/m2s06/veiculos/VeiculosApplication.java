@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 public class VeiculosApplication {
 
 	private Aplicacao app;
+
 	public static void main(String[] args) {
 		SpringApplication.run(VeiculosApplication.class, args);
 	}
@@ -19,5 +20,4 @@ public class VeiculosApplication {
 			app.executar();
 		};
 	}
-
 }

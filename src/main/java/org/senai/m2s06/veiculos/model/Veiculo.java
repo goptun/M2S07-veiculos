@@ -9,7 +9,7 @@ import org.senai.m2s06.veiculos.model.enums.TipoVeiculo;
 import java.util.List;
 
 @Entity
-@Table(name = "VEICULOS")
+@Table(name = "veiculos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
