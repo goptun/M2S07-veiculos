@@ -27,4 +27,15 @@ public class Multa {
         this.valor = valor;
         this.veiculo = veiculo;
     }
+
+
+    @Override
+    public String toString() {
+        return "Multa{" +
+                "id=" + id +
+                ", local='" + local + '\'' +
+                ", motivo='" + motivo + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
 }
